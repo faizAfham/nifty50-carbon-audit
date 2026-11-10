@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nifty 50 Carbon Report</title>
+<style>
+  @page { size: A4; margin: 14mm 14mm 16mm; }
+  :root { --ink:#1b1f24; --muted:#5f6670; --line:#dfe2e6; --accent:#1f3a5f; --soft:#f2f4f7; }
+  * { box-sizing: border-box; }
+  body { font: 10pt/1.45 -apple-system, "Helvetica Neue", Arial, sans-serif; color: var(--ink); margin: 0; background:#fff; }
+  h2 { font-size: 13pt; margin: 18px 0 8px; padding-bottom: 4px; border-bottom: 2px solid var(--ink); }
+  h3 { font-size: 10.5pt; margin: 12px 0 4px; }
+  h2, h3 { break-after: avoid; }
+  p { margin: 0 0 7px; }
+  table { width: 100%; border-collapse: collapse; font-size: 8.8pt; margin: 6px 0 8px; }
+  th, td { text-align: left; padding: 4px 7px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--soft); font-weight: 700; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.hl td { background: var(--soft); font-weight: 600; }
+  table, figure, .two, .three, .flow, .q, .callout, .card, .stats, tr { break-inside: avoid; }
+  .q { background: var(--soft); border-left: 4px solid var(--accent); padding: 9px 13px; margin: 8px 0; }
+  .q p { margin-bottom: 5px; }
+  .callout { background: var(--soft); border-left: 4px solid var(--accent); padding: 8px 12px; margin: 8px 0; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+  .stat { border: 1px solid var(--line); border-radius: 6px; padding: 9px; }
+  .stat b { display: block; font-size: 17pt; line-height: 1.1; color: var(--accent); }
+  .stat span { font-size: 8.3pt; color: var(--muted); }
+  .flow { display: flex; gap: 5px; margin: 8px 0; align-items: stretch; }
+  .flow div { flex: 1; background: var(--soft); border-radius: 6px; padding: 7px; font-size: 8.5pt; }
+  .flow div b { display:block; font-size: 9pt; color: var(--accent); }
+  .flow .a { flex: 0 0 12px; background:none; padding:0; display:flex; align-items:center; justify-content:center; color: var(--muted); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .card { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; font-size: 8.8pt; }
+  figure { margin: 8px 0; }
+  figure img { width: 100%; max-height: 92mm; object-fit: contain; border: 1px solid var(--line); border-radius: 4px; }
+  figcaption { font-size: 8.3pt; color: var(--muted); margin-top: 3px; }
+  ul, ol { margin: 3px 0 7px; padding-left: 18px; } li { margin-bottom: 2px; }
+  .note { font-size: 8.3pt; color: var(--muted); }
+  .takeaway { font-weight: 600; }
+  .tag { display:inline-block; font-size: 8pt; padding: 0 7px; border-radius: 10px; font-weight: 700; border: 1px solid var(--ink); }
+  code { font-family: Menlo, Consolas, monospace; font-size: 8.3pt; }
+  .ctrl { margin: 0 0 6px; } .ctrl th { width: 16%; } .ctrl td { width: 34%; }
+  .credit { font-size: 8.3pt; color: var(--muted); border-top: 1px solid var(--line); padding-top: 6px; margin-top: 14px; }
+  .cover { height: 265mm; display: flex; flex-direction: column; break-after: page; }
+  .cover .top { border-top: 6px solid var(--accent); padding-top: 14px; display:flex; justify-content: space-between; font-size: 9pt; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+  .cover .mid { margin-top: 62mm; }
+  .cover .doc { font-size: 10pt; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .cover h1 { font-size: 34pt; line-height: 1.1; margin: 8px 0 6px; letter-spacing: -1px; }
+  .cover .tagline { font-size: 14pt; color: var(--muted); max-width: 155mm; line-height: 1.35; }
+  .cover .rule { width: 40mm; height: 2px; background: var(--ink); margin: 18px 0; }
+  .cover .toc { font-size: 10pt; columns: 2; max-width: 150mm; padding-left: 18px; margin: 0; }
+  .cover .toc li { margin-bottom: 4px; }
+  .cover .bottom { margin-top: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; border-top: 1px solid var(--line); padding-top: 10px; font-size: 9pt; }
+  .cover .bottom b { display:block; font-size: 7.5pt; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 2px; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="top"><span>Analytics Report</span><span>v1.0 · October 2026</span></div>
+  <div class="mid">
+    <div class="doc">ESG Analytics · SEBI BRSR</div>
+    <h1>Carbon Intensity of the Nifty 50</h1>
+    <div class="tagline">An audit of India's mandatory sustainability filings for 49 of the largest listed companies, and a stress test of a regression-based carbon grading model on real data.</div>
+    <div class="rule"></div>
+    <ol class="toc">
+      <li>Data and methodology</li>
+      <li>Data quality audit</li>
+      <li>Findings</li>
+      <li>Evaluating the (m)y grading model</li>
+      <li>Recommendations</li>
+      <li>Limitations and next steps</li>
+    </ol>
+  </div>
+  <div class="bottom">
+    <div><b>Analyst</b>Mohammad Faiz Ahmad</div>
+    <div><b>Institution</b>IIT Patna</div>
+    <div><b>Data</b>SEBI BRSR via NSE, FY23-FY24</div>
+    <div><b>Tools</b>Python · pandas · scipy · SQL (DuckDB: CTEs, window functions)</div>
+  </div>
+</section>
+
+<table class="ctrl">
+  <tr><th>Analyst</th><td>Mohammad Faiz Ahmad</td><th>Status</th><td>Final</td></tr>
+  <tr><th>Data source</th><td>SEBI BRSR, Principle 6 (XBRL + PDF), via NSE</td><th>Period</th><td>FY2022-23 and FY2023-24</td></tr>
+  <tr><th>Coverage</th><td>49 of 50 Nifty 50 companies, 98 company-years</td><th>Version</th><td>v1.0, October 2026</td></tr>
+</table>
+
+<h2>Executive summary</h2>
+<div class="q">
+<p><b>Questions.</b> (1) Using only what companies are legally required to disclose, who emits the most carbon per rupee earned, and is it getting better? (2) Does a regression-based "carbon grade" tell us anything that a simple ratio doesn't?</p>
+<p style="margin:0"><b>Answer in one line.</b> The raw filings can't be trusted as filed. Once they're fixed, carbon in the Nifty 50 is a story about five companies and one sector divide. The improvement in the headline numbers comes from revenue growth, and the grading model is too unstable to use.</p>
+</div>
+<div class="stats">
+  <div class="stat"><b>39%</b><span>of machine-readable filings had unit or consistency errors</span></div>
+  <div class="stat"><b>52%</b><span>of all Scope 1+2 emissions come from NTPC alone (86% from the top 5)</span></div>
+  <div class="stat"><b>−9.3% / +2.8%</b><span>median intensity vs median absolute emissions, year on year</span></div>
+  <div class="stat"><b>32 / 49</b><span>model grades flip under one alternative scaling choice</span></div>
+</div>
+<h3>Key findings</h3>
+<ol>
+  <li><b>The data needs an audit before any analysis.</b> 19 of 49 filings had errors. NTPC's 352 Mt was tagged as tonnes, which would have made India's biggest emitter look like its cleanest.</li>
+  <li><b>Sector explains 74% of the variance in intensity.</b> Power has a median of 977 tCO2e per Rs crore; financial services has 0.74. Cross-industry rankings mostly rank industries.</li>
+  <li><b>Emissions are extremely concentrated.</b> Five companies emit 85.8% of the 675 Mt total, and NTPC alone emits 52%.</li>
+  <li><b>The "improvement" is revenue growth.</b> Intensity fell for 34 of 44 companies, but absolute emissions rose.</li>
+  <li><b>The (m)y model only partly agrees with intensity</b> (Spearman ρ = −0.55) and is unstable, so I would not ship it as a rating.</li>
+</ol>
+
+<h2>1 · Data and methodology</h2>
+<div class="flow">
+  <div><b>Collect</b>Filing index from NSE's API; downloaded each BRSR XBRL file and PDF</div><div class="a">→</div>
+  <div><b>Extract</b>Parsed Scope 1, Scope 2, energy and revenue from Principle 6</div><div class="a">→</div>
+  <div><b>Audit</b>Compared every unit with the company's own PDF and logged each fix</div><div class="a">→</div>
+  <div><b>Analyse</b>Intensity, YoY change, sector z-scores, concentration</div><div class="a">→</div>
+  <div><b>Evaluate</b>(m)y grading model plus 6 sensitivity variants</div>
+</div>
+<div class="two">
+<div>
+<h3>Data dictionary</h3>
+<table>
+  <tr><th>Field</th><th>Meaning</th></tr>
+  <tr><td><code>scope1_tco2e</code></td><td>Direct emissions: fuel the company burns itself</td></tr>
+  <tr><td><code>scope2_tco2e</code></td><td>Indirect emissions from purchased electricity</td></tr>
+  <tr><td><code>energy_gj</code></td><td>Total energy consumed</td></tr>
+  <tr><td><code>energy_renewable_gj</code></td><td>Energy from renewable sources</td></tr>
+  <tr><td><code>revenue_cr</code></td><td>Revenue from operations (Rs crore), from the same filing</td></tr>
+  <tr><td><code>source_url</code></td><td>Link to the NSE file each value came from</td></tr>
+</table>
+</div>
+<div>
+<h3>Metrics</h3>
+<table>
+  <tr><th>Metric</th><th>Definition</th></tr>
+  <tr><td>Intensity</td><td>(Scope 1 + Scope 2) ÷ revenue, tCO2e per Rs crore</td></tr>
+  <tr><td>Scope 1 share</td><td>Scope 1 ÷ (Scope 1 + Scope 2)</td></tr>
+  <tr><td>YoY change</td><td>FY24 vs FY23, excluding breaks above 3x</td></tr>
+  <tr><td>Sector z-score</td><td>z-score of log10 intensity within a sector (sectors with 3+ companies only)</td></tr>
+</table>
+<p class="note">Emissions and revenue always come from the same filing, so they share the same boundary (33 standalone, 16 consolidated). Mahindra &amp; Mahindra is excluded because its files return 404 on NSE.</p>
+</div>
+</div>
+
+<h2>2 · Data quality audit</h2>
+<p>Before any analysis, I checked every machine-readable value against the human-readable PDF. <b>19 of 49 filings (39%) had at least one value that couldn't be used as tagged.</b></p>
+<table>
+  <tr><th>Error type</th><th class="n">Companies</th><th>Who</th><th>Example / impact</th></tr>
+  <tr><td>Wrong emissions unit</td><td class="n">3</td><td>NTPC, Tata Steel, ITC</td><td>NTPC filed 352 <i>million</i> tonnes under a "tonnes" tag, understating it by 1,000,000x</td></tr>
+  <tr><td>Wrong energy unit</td><td class="n">8</td><td>NTPC, ITC, UltraTech, Adani Ports, TCS, Bajaj Auto, BSE, Axis Bank</td><td>TJ, MJ or PJ filed under a GJ tag; Axis's XBRL value doesn't match its own PDF</td></tr>
+  <tr><td>Wrong revenue unit</td><td class="n">8</td><td>Incl. HCL (Rs million)</td><td>Rs crore typed where rupees were expected</td></tr>
+  <tr><td>Methodology breaks</td><td class="n">4</td><td>Apollo, Tata Consumer, SBI Life, Axis</td><td>Apollo's Scope 1 went from 8,033 t to 731,919 t; excluded from YoY only</td></tr>
+</table>
+<div class="callout"><b>Rule I followed:</b> no value is estimated. Every number is either as filed or converted using the unit stated in the company's own PDF, and each conversion is logged with a link in <code>data/corrections.csv</code>. Hindalco (whose PDF refers to its annual report), Coal India and Cipla (both with unusually high emissions per unit of energy) are kept as filed and flagged.</div>
+
+<h2>3 · Findings</h2>
+<h3>3.1 Industry decides almost everything</h3>
+<p>Intensity spans <b>144,820x</b>, from Eternal at 0.013 to NTPC at 1,946 tCO2e per Rs crore; the median company is at 5.2. <b>Sector alone explains 74%</b> of the variance in log intensity.</p>
+<div class="two" style="grid-template-columns: 1.5fr 1fr; align-items:start">
+<figure style="margin:0"><img src="charts/1_intensity_by_sector.png" alt="Intensity by sector"><figcaption>Figure 1. Scope 1+2 intensity by sector (log scale). Dot = company, bar = sector median.</figcaption></figure>
+<table>
+  <tr><th>Sector</th><th class="n">Median</th></tr>
+  <tr><td>Power</td><td class="n">976.8</td></tr>
+  <tr><td>Construction Materials</td><td class="n">641.2</td></tr>
+  <tr><td>Metals &amp; Mining</td><td class="n">353.9</td></tr>
+  <tr><td>Oil, Gas &amp; Fuels</td><td class="n">65.5</td></tr>
+  <tr><td>Healthcare</td><td class="n">17.2</td></tr>
+  <tr><td>FMCG</td><td class="n">12.6</td></tr>
+  <tr><td>Automobile</td><td class="n">2.9</td></tr>
+  <tr><td>IT</td><td class="n">0.96</td></tr>
+  <tr><td>Financial Services</td><td class="n">0.74</td></tr>
+  <tr><td colspan="2" class="note">tCO2e per Rs crore, FY24, selected sectors</td></tr>
+</table>
+</div>
+
+<h3>3.2 Five companies are the whole story</h3>
+<table>
+  <tr><th>#</th><th>Company</th><th>Sector</th><th class="n">Scope 1+2 (Mt)</th><th class="n">Share of total</th><th class="n">Intensity</th><th>(m)y grade</th></tr>
+  <tr class="hl"><td>1</td><td>NTPC</td><td>Power</td><td class="n">352.5</td><td class="n">52.2%</td><td class="n">1,946</td><td>Brown</td></tr>
+  <tr><td>2</td><td>UltraTech Cement</td><td>Construction Materials</td><td class="n">73.1</td><td class="n">10.8%</td><td class="n">1,031</td><td>Brown</td></tr>
+  <tr><td>3</td><td>Tata Steel</td><td>Metals &amp; Mining</td><td class="n">63.0</td><td class="n">9.3%</td><td class="n">447</td><td>Neutral</td></tr>
+  <tr><td>4</td><td>JSW Steel</td><td>Metals &amp; Mining</td><td class="n">53.2</td><td class="n">7.9%</td><td class="n">398</td><td>Brown</td></tr>
+  <tr><td>5</td><td>Reliance</td><td>Oil, Gas &amp; Fuels</td><td class="n">37.7</td><td class="n">5.6%</td><td class="n">66</td><td>Neutral</td></tr>
+  <tr><td>6</td><td>Coal India</td><td>Oil, Gas &amp; Fuels</td><td class="n">34.7</td><td class="n">5.1%</td><td class="n">244</td><td>Neutral</td></tr>
+  <tr><td>7</td><td>Hindalco</td><td>Metals &amp; Mining</td><td class="n">25.7</td><td class="n">3.8%</td><td class="n">310</td><td>Brown</td></tr>
+  <tr><td colspan="3"><b>Total, 49 companies</b></td><td class="n"><b>675.3</b></td><td class="n"><b>100%</b></td><td colspan="2" class="note">The 12 financial firms: 0.28%</td></tr>
+</table>
+<p class="takeaway">→ Any decarbonisation conversation about the Nifty 50 is really about five to seven companies. Banks look clean only because financed (Scope 3) emissions aren't required to be reported.</p>
+
+<div class="callout"><b>3.3 The "improvement" is mostly revenue growth.</b> Across 44 clean year-on-year pairs, median intensity <b>fell 9.3%</b> (34 of 44 companies improved), but median absolute emissions <b>rose 2.5%</b> (45 pairs without an emissions break; +2.8% on the same 44). Intensity is the number companies prefer to report. The atmosphere sees the absolute number.</div>
+
+<h3>3.4 Who is dirty <i>for their sector</i>?</h3>
+<div class="two" style="grid-template-columns: 1.1fr 1fr; align-items:start">
+<figure style="margin:0"><img src="charts/2_sector_relative_outliers.png" alt="Sector z-scores" style="max-height:100mm"><figcaption>Figure 2. Each company vs its own sector (z-score of log intensity). Right = dirtier than peers.</figcaption></figure>
+<div>
+  <p>A fair comparison is within a sector, so I z-scored each company's log intensity inside its industry (only industries with 3+ companies).</p>
+  <ul>
+    <li><b>Dirtier than peers:</b> BSE (+2.2; its purchased power is large relative to its revenue), Coal India (+1.15), Apollo Hospitals (+1.15), Eicher (+1.08)</li>
+    <li><b>Cleaner than peers:</b> Adani Enterprises (−1.49), HUL (−1.48, almost entirely renewable power), Bajaj Auto (−1.34)</li>
+  </ul>
+  <p class="takeaway">→ This is the view I'd put in front of a decision-maker, not the raw ranking.</p>
+</div>
+</div>
+
+<h2>4 · Evaluating the (m)y grading model</h2>
+<p>The (m)y model was proposed by a senior as a concept, without data. Score five facts about a company from 1 to 10, fit a straight line through them in a fixed order, and grade the company by the slope <b>m</b> and intercept <b>y</b>: <span class="tag">Acceptable</span> the line slopes up · <span class="tag">Neutral</span> flat · <span class="tag">Brown exposure</span> slopes down.</p>
+<table>
+  <tr><th>Point</th><th>Deck factor</th><th>BRSR field I mapped it to</th><th>Scaling</th></tr>
+  <tr><td>1</td><td>Input</td><td>Total energy consumed</td><td>log10, min-max to 1-10</td></tr>
+  <tr><td>2</td><td>Input</td><td>Non-renewable share of energy</td><td>min-max to 1-10</td></tr>
+  <tr><td>3 · 4</td><td>Transition</td><td>Scope 1 · Scope 2 emissions</td><td>log10, min-max to 1-10</td></tr>
+  <tr><td>5</td><td>Demand</td><td>Revenue from operations</td><td>log10, min-max to 1-10</td></tr>
+</table>
+<p class="note">The deck gives no numeric thresholds, so I set the bands myself: Acceptable if m &gt; 0.25, Neutral if |m| ≤ 0.25, Brown if m &lt; −0.25.</p>
+<figure><img src="charts/4_my_model_examples.png" alt="Three example fits" style="max-height:62mm"><figcaption>Figure 3. The model on real data for three companies: TCS slopes up (Acceptable), Cipla is flat (Neutral), BSE slopes down (Brown exposure).</figcaption></figure>
+<div class="two">
+<figure style="margin:0"><img src="charts/3_my_slope_vs_intensity.png" alt="Slope vs intensity"><figcaption>Figure 4. If the model worked, high-intensity companies (right) would all be Brown (bottom). Coal India, Reliance and Tata Steel sit in Neutral; Eternal and Jio Financial, two of the three cleanest, are Brown.</figcaption></figure>
+<div>
+  <h3 style="margin-top:0">Verdict: it only partly works</h3>
+  <ul>
+    <li>Grades: 8 Acceptable, 29 Neutral, 12 Brown exposure</li>
+    <li>Agrees with intensity only moderately: <b>Spearman ρ = −0.55</b> (p &lt; 0.001)</li>
+    <li>Coal India ranks <b>43rd of 49</b> on intensity but is <b>9th best</b> by slope</li>
+  </ul>
+  <h3>Why it breaks</h3>
+  <ul>
+    <li><b>Size cancels out.</b> Big firms have big emissions <i>and</i> big revenue, so the line goes flat. The slope partly measures size.</li>
+    <li><b>Relative scaling.</b> A company's grade depends on who else is in the set.</li>
+    <li><b>Scope 3 is missing</b>, so banks look clean.</li>
+    <li><b>Sector mix</b> dominates every cross-industry comparison.</li>
+  </ul>
+</div>
+</div>
+<h3>Sensitivity: how stable are the grades?</h3>
+<table>
+  <tr><th>Variant</th><th class="n">Acceptable</th><th class="n">Neutral</th><th class="n">Brown</th><th class="n">Grades changed</th><th class="n">ρ vs intensity</th></tr>
+  <tr class="hl"><td>Default (log min-max, band 0.25)</td><td class="n">8</td><td class="n">29</td><td class="n">12</td><td class="n">0</td><td class="n">−0.55</td></tr>
+  <tr><td>Linear min-max scaling</td><td class="n">4</td><td class="n">6</td><td class="n">39</td><td class="n">32</td><td class="n">−0.07</td></tr>
+  <tr><td>Percentile-rank scaling</td><td class="n">15</td><td class="n">18</td><td class="n">16</td><td class="n">15</td><td class="n">−0.47</td></tr>
+  <tr><td>Neutral band 0.10</td><td class="n">20</td><td class="n">10</td><td class="n">19</td><td class="n">19</td><td class="n">−0.55</td></tr>
+  <tr><td>Neutral band 0.50</td><td class="n">4</td><td class="n">39</td><td class="n">6</td><td class="n">10</td><td class="n">−0.55</td></tr>
+  <tr><td>Drop non-renewable share</td><td class="n">25</td><td class="n">15</td><td class="n">9</td><td class="n">21</td><td class="n">−0.77</td></tr>
+  <tr><td>Drop energy</td><td class="n">6</td><td class="n">10</td><td class="n">33</td><td class="n">26</td><td class="n">−0.21</td></tr>
+</table>
+<p class="takeaway">→ A rating that changes for 32 of 49 companies when one modelling choice changes is not a rating. If anything, dropping the non-renewable-share point makes it track intensity better (ρ = −0.77).</p>
+
+<h2>5 · Recommendations</h2>
+<table>
+  <tr><th style="width:24%">For…</th><th>Recommendation</th></tr>
+  <tr><td>Anyone using BRSR data</td><td>Never trust the XBRL as filed. Run a unit audit against the PDF first, because 39% of filings fail it.</td></tr>
+  <tr><td>Ranking companies</td><td>Use sector-relative intensity, not one cross-industry list.</td></tr>
+  <tr><td>Tracking progress</td><td>Report absolute emissions next to intensity. Intensity alone hides a 2.8% rise in absolute emissions.</td></tr>
+  <tr><td>Composite "grades"</td><td>Test a model's stability before shipping it. This one fails on size bias and scaling choices; use intensity plus the sector z-score instead.</td></tr>
+</table>
+
+<h2>6 · Limitations and next steps</h2>
+<div class="two">
+  <div><h3>Limitations</h3><ul>
+    <li>Scope 3 is optional in BRSR, so financed and product-use emissions are missing</li>
+    <li>Only two years, so trends are a single change, not a series</li>
+    <li>With 49 companies, 8 of 15 sectors have fewer than 3 companies, which is too few for peer z-scores</li>
+    <li>Standalone and consolidated boundaries are mixed across companies</li>
+  </ul></div>
+  <div><h3>Next steps</h3><ul>
+    <li>Extend to the top 1,000 BRSR filers for proper sector peer groups</li>
+    <li>Add Scope 3 where it is disclosed</li>
+    <li>Re-run on FY25 filings to test whether the decoupling holds</li>
+    <li>Turn the unit audit into an automated check that flags suspicious filings</li>
+  </ul></div>
+</div>
+
+<h3>Appendix · Reproducibility</h3>
+<table>
+  <tr><th style="width:30%">Step</th><th>Command / file</th></tr>
+  <tr><td>Extract and correct</td><td><code>python extract.py</code> → <code>data/brsr_emissions.csv</code> (applies <code>data/corrections.csv</code>)</td></tr>
+  <tr><td>PDF unit audit</td><td><code>python audit_units.py</code> → <code>data/pdf_unit_audit.csv</code></td></tr>
+  <tr><td>Analysis and charts</td><td><code>python analysis.py</code> → <code>data/company_metrics.csv</code>, <code>charts/</code></td></tr>
+  <tr><td>SQL cross-check</td><td><code>python run_sql.py</code> → <code>sql/results/</code> (DuckDB CTEs and window functions; asserts the results match the Python)</td></tr>
+</table>
+
+<div class="credit">Builds on the (m)y model concept by Rohan Choudhary (IIT Patna), used with permission. The data pipeline, unit audit, metrics, model implementation, sensitivity tests and findings are new work. Every data row links to its NSE source file.</div>
+</body>
+</html>

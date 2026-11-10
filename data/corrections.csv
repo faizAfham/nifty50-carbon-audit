@@ -1,0 +1,45 @@
+symbol,fy,field,filed_value,corrected_value,reason,evidence_url
+TATASTEEL,FY2023-24,scope1_tco2e,56.0,56000000.0,XBRL tagged as tCO2e but BRSR PDF table unit is Million tonnes CO2e; x1e6,https://nsearchives.nseindia.com/corporate/SAKSHIKAPUR_24062024111447_BRSRNSEBSE.pdf
+TATASTEEL,FY2023-24,scope2_tco2e,7.0,7000000.0,XBRL tagged as tCO2e but BRSR PDF table unit is Million tonnes CO2e; x1e6,https://nsearchives.nseindia.com/corporate/SAKSHIKAPUR_24062024111447_BRSRNSEBSE.pdf
+TATASTEEL,FY2022-23,scope1_tco2e,55.0,55000000.0,XBRL tagged as tCO2e but BRSR PDF table unit is Million tonnes CO2e; x1e6,https://nsearchives.nseindia.com/corporate/SAKSHIKAPUR_24062024111447_BRSRNSEBSE.pdf
+TATASTEEL,FY2022-23,scope2_tco2e,6.0,6000000.0,XBRL tagged as tCO2e but BRSR PDF table unit is Million tonnes CO2e; x1e6,https://nsearchives.nseindia.com/corporate/SAKSHIKAPUR_24062024111447_BRSRNSEBSE.pdf
+NTPC,FY2023-24,scope1_tco2e,352.47,352470000.0,XBRL tagged as tCO2e but BRSR PDF table unit is Million Metric tonnes CO2e; x1e6,https://nsearchives.nseindia.com/corporate/NTPC1_06082024115916_NTPCSE_BRSR_2024.pdf
+NTPC,FY2023-24,scope2_tco2e,0.07,70000.0,XBRL tagged as tCO2e but BRSR PDF table unit is Million Metric tonnes CO2e; x1e6,https://nsearchives.nseindia.com/corporate/NTPC1_06082024115916_NTPCSE_BRSR_2024.pdf
+NTPC,FY2022-23,scope1_tco2e,335.72,335720000.0,XBRL tagged as tCO2e but BRSR PDF table unit is Million Metric tonnes CO2e; x1e6,https://nsearchives.nseindia.com/corporate/NTPC1_06082024115916_NTPCSE_BRSR_2024.pdf
+NTPC,FY2022-23,scope2_tco2e,0.07,70000.0,XBRL tagged as tCO2e but BRSR PDF table unit is Million Metric tonnes CO2e; x1e6,https://nsearchives.nseindia.com/corporate/NTPC1_06082024115916_NTPCSE_BRSR_2024.pdf
+TCS,FY2023-24,energy_gj,1709182975.0,1709182.975,XBRL tagged as GJ but BRSR PDF states Mega Joules; /1000,https://nsearchives.nseindia.com/corporate/TCS_CORPCS_12062024193403_SEIntBRSRsigned.pdf
+TCS,FY2023-24,energy_renewable_gj,1266288297.0,1266288.297,XBRL tagged as GJ but BRSR PDF states Mega Joules; /1000,https://nsearchives.nseindia.com/corporate/TCS_CORPCS_12062024193403_SEIntBRSRsigned.pdf
+TCS,FY2022-23,energy_gj,1505016079.0,1505016.079,XBRL tagged as GJ but BRSR PDF states Mega Joules; /1000,https://nsearchives.nseindia.com/corporate/TCS_CORPCS_12062024193403_SEIntBRSRsigned.pdf
+TCS,FY2022-23,energy_renewable_gj,830543637.0,830543.637,XBRL tagged as GJ but BRSR PDF states Mega Joules; /1000,https://nsearchives.nseindia.com/corporate/TCS_CORPCS_12062024193403_SEIntBRSRsigned.pdf
+BAJAJ-AUTO,FY2023-24,energy_gj,725429886.0,725429.886,XBRL tagged as GJ but BRSR PDF states Mega Joules; /1000,https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_21062024190847_BRSR.pdf
+BAJAJ-AUTO,FY2023-24,energy_renewable_gj,49763346.0,49763.346,XBRL tagged as GJ but BRSR PDF states Mega Joules; /1000,https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_21062024190847_BRSR.pdf
+BAJAJ-AUTO,FY2022-23,energy_gj,504983009.0,504983.009,XBRL tagged as GJ but BRSR PDF states Mega Joules; /1000,https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_21062024190847_BRSR.pdf
+BAJAJ-AUTO,FY2022-23,energy_renewable_gj,47550490.0,47550.49,XBRL tagged as GJ but BRSR PDF states Mega Joules; /1000,https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_21062024190847_BRSR.pdf
+BSE,FY2023-24,energy_gj,58701326.4,58701.3264,XBRL tagged as GJ but BRSR PDF states Mega Joules; /1000,https://nsearchives.nseindia.com/corporate/BSE_20062024151526_BRSR2324.pdf
+BSE,FY2023-24,energy_renewable_gj,0.0,0.0,XBRL tagged as GJ but BRSR PDF states Mega Joules; /1000,https://nsearchives.nseindia.com/corporate/BSE_20062024151526_BRSR2324.pdf
+BSE,FY2022-23,energy_gj,48343489.2,48343.4892,XBRL tagged as GJ but BRSR PDF states Mega Joules; /1000,https://nsearchives.nseindia.com/corporate/BSE_20062024151526_BRSR2324.pdf
+BSE,FY2022-23,energy_renewable_gj,0.0,0.0,XBRL tagged as GJ but BRSR PDF states Mega Joules; /1000,https://nsearchives.nseindia.com/corporate/BSE_20062024151526_BRSR2324.pdf
+ADANIPORTS,FY2023-24,energy_gj,3452.98,3452980.0,XBRL tagged as GJ but BRSR PDF states TJ; x1000,https://nsearchives.nseindia.com/corporate/rkbhagia_28052024224029_IntimationofBRSR.pdf
+ADANIPORTS,FY2023-24,energy_renewable_gj,227.98,227980.0,XBRL tagged as GJ but BRSR PDF states TJ; x1000,https://nsearchives.nseindia.com/corporate/rkbhagia_28052024224029_IntimationofBRSR.pdf
+ADANIPORTS,FY2022-23,energy_gj,3014.0,3014000.0,XBRL tagged as GJ but BRSR PDF states TJ; x1000,https://nsearchives.nseindia.com/corporate/rkbhagia_28052024224029_IntimationofBRSR.pdf
+ADANIPORTS,FY2022-23,energy_renewable_gj,194.0,194000.0,XBRL tagged as GJ but BRSR PDF states TJ; x1000,https://nsearchives.nseindia.com/corporate/rkbhagia_28052024224029_IntimationofBRSR.pdf
+ULTRACEMCO,FY2023-24,energy_gj,319950.56,319950560.0,XBRL tagged as GJ but BRSR PDF states TJ; x1000,https://nsearchives.nseindia.com/corporate/ULTRACEMCO_22072024225320_BRSRSE_signed.pdf
+ULTRACEMCO,FY2023-24,energy_renewable_gj,7857.78,7857780.0,XBRL tagged as GJ but BRSR PDF states TJ; x1000,https://nsearchives.nseindia.com/corporate/ULTRACEMCO_22072024225320_BRSRSE_signed.pdf
+ULTRACEMCO,FY2022-23,energy_gj,288583.92,288583920.0,XBRL tagged as GJ but BRSR PDF states TJ; x1000,https://nsearchives.nseindia.com/corporate/ULTRACEMCO_22072024225320_BRSRSE_signed.pdf
+ULTRACEMCO,FY2022-23,energy_renewable_gj,1244.9,1244900.0,XBRL tagged as GJ but BRSR PDF states TJ; x1000,https://nsearchives.nseindia.com/corporate/ULTRACEMCO_22072024225320_BRSRSE_signed.pdf
+AXISBANK,FY2023-24,energy_gj,1578.97,897830.0,"XBRL value does not match BRSR PDF table (stated in TJ: 897.83/1005.42 total, 43.69/11.94 renewable); PDF value x1000",https://nsearchives.nseindia.com/corporate/AXISBANK1_02072024133842_SEIntimationBRSR.pdf
+AXISBANK,FY2023-24,energy_renewable_gj,43.69,43690.0,"XBRL value does not match BRSR PDF table (stated in TJ: 897.83/1005.42 total, 43.69/11.94 renewable); PDF value x1000",https://nsearchives.nseindia.com/corporate/AXISBANK1_02072024133842_SEIntimationBRSR.pdf
+AXISBANK,FY2022-23,energy_gj,1994.83,1005420.0,"XBRL value does not match BRSR PDF table (stated in TJ: 897.83/1005.42 total, 43.69/11.94 renewable); PDF value x1000",https://nsearchives.nseindia.com/corporate/AXISBANK1_02072024133842_SEIntimationBRSR.pdf
+AXISBANK,FY2022-23,energy_renewable_gj,11.94,11940.0,"XBRL value does not match BRSR PDF table (stated in TJ: 897.83/1005.42 total, 43.69/11.94 renewable); PDF value x1000",https://nsearchives.nseindia.com/corporate/AXISBANK1_02072024133842_SEIntimationBRSR.pdf
+NTPC,FY2023-24,energy_gj,3942141.11,3942141110.0,XBRL tagged as GJ but BRSR PDF table header states TJ; x1000,https://nsearchives.nseindia.com/corporate/NTPC1_06082024115916_NTPCSE_BRSR_2024.pdf
+NTPC,FY2023-24,energy_renewable_gj,2400.52,2400520.0,XBRL tagged as GJ but BRSR PDF table header states TJ; x1000,https://nsearchives.nseindia.com/corporate/NTPC1_06082024115916_NTPCSE_BRSR_2024.pdf
+NTPC,FY2022-23,energy_gj,3743144.58,3743144580.0,XBRL tagged as GJ but BRSR PDF table header states TJ; x1000,https://nsearchives.nseindia.com/corporate/NTPC1_06082024115916_NTPCSE_BRSR_2024.pdf
+NTPC,FY2022-23,energy_renewable_gj,343.7,343700.0,XBRL tagged as GJ but BRSR PDF table header states TJ; x1000,https://nsearchives.nseindia.com/corporate/NTPC1_06082024115916_NTPCSE_BRSR_2024.pdf
+ITC,FY2023-24,scope1_tco2e,1141.0,1141000.0,XBRL tagged as tCO2e but BRSR PDF unit is kilo tonnes CO2e; x1000,https://nsearchives.nseindia.com/corporate/ITC_28062024115927_SE_BRSR_.pdf
+ITC,FY2023-24,scope2_tco2e,231.0,231000.0,XBRL tagged as tCO2e but BRSR PDF unit is kilo tonnes CO2e; x1000,https://nsearchives.nseindia.com/corporate/ITC_28062024115927_SE_BRSR_.pdf
+ITC,FY2023-24,energy_gj,26237.0,26237000.0,"XBRL tagged as GJ but BRSR PDF table is in TJ (filing intensity 374 GJ/Rs cr x Rs 70,152 cr = 26.2 mn GJ); x1000",https://nsearchives.nseindia.com/corporate/ITC_28062024115927_SE_BRSR_.pdf
+ITC,FY2023-24,energy_renewable_gj,13168.0,13168000.0,XBRL tagged as GJ but BRSR PDF table is in TJ; x1000,https://nsearchives.nseindia.com/corporate/ITC_28062024115927_SE_BRSR_.pdf
+ITC,FY2022-23,scope1_tco2e,1350.0,1350000.0,XBRL tagged as tCO2e but BRSR PDF unit is kilo tonnes CO2e; x1000,https://nsearchives.nseindia.com/corporate/ITC_28062024115927_SE_BRSR_.pdf
+ITC,FY2022-23,scope2_tco2e,231.0,231000.0,XBRL tagged as tCO2e but BRSR PDF unit is kilo tonnes CO2e; x1000,https://nsearchives.nseindia.com/corporate/ITC_28062024115927_SE_BRSR_.pdf
+ITC,FY2022-23,energy_gj,26751.0,26751000.0,"XBRL tagged as GJ but BRSR PDF table is in TJ (filing intensity 374 GJ/Rs cr x Rs 70,152 cr = 26.2 mn GJ); x1000",https://nsearchives.nseindia.com/corporate/ITC_28062024115927_SE_BRSR_.pdf
+ITC,FY2022-23,energy_renewable_gj,11494.0,11494000.0,XBRL tagged as GJ but BRSR PDF table is in TJ; x1000,https://nsearchives.nseindia.com/corporate/ITC_28062024115927_SE_BRSR_.pdf

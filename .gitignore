@@ -1,0 +1,3 @@
+data/raw/*
+!data/raw/nifty50.csv
+.venv/

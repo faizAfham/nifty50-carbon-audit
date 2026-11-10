@@ -1,0 +1,6 @@
+error_type,companies,corrected_values,symbols
+ANY (total),9,44,"ADANIPORTS, AXISBANK, BAJAJ-AUTO, BSE, ITC, NTPC, TATASTEEL, TCS, ULTRACEMCO"
+emissions in kilo-tonnes,1,4,ITC
+emissions in million tonnes,2,8,"NTPC, TATASTEEL"
+energy in MJ/TJ under GJ tag,7,28,"ADANIPORTS, BAJAJ-AUTO, BSE, ITC, NTPC, TCS, ULTRACEMCO"
+value does not match PDF,1,4,AXISBANK
